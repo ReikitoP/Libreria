@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+    <!--     xmlns:th="http://www.thymeleaf.org"-->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=<nav class="navbar navbar-expand-sm bg-light navbar-dark bg-dark>
+        <link rel="stylesheet" href="formularioAutor.html">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/formularioAutor.css">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Navbar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/}">Menú Principal</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/prestamos/lista}">Menú Prestamos</a>
+        </li>
+
+    </ul>
+
+    <form th:action="@{/prestamos/registro}" method="POST">
+        <div class="form-group">
+            <label>Fecha-Prestamo</label> <input type="number" class="form-control" name="Fecha-Prestamo" placeholder="Fecha de Prestamo">
+        </div>
+
+        <div class="form-group">
+            <label>Documento</label> <input type="text" class="form-control" name="documento" placeholder="Documento del cliente">
+        </div>
+        <div class="form-group">
+            <label>Nombre</label> <input type="text" class="form-control" name="nombre-cliente" placeholder="Nombre del cliente">
+        </div>
+        <div class="form-group">
+            <label>Apellido</label> <input type="text" class="form-control" name="apellido-cliente" placeholder="Apellido del cliente">
+        </div>
+        <div class="form-group">
+            <label>Telefono</label> <input type="text" class="form-control" name="telefono-cliente" placeholder="Telefono de cliente">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <footer>
+        <div class="copyright" style="background-color: #0d47a1;">
+            <div class="container-fluid" style="background-color: #0d47a1; color: #bbdefb;">
+                Pablo
+
+            </div>
+        </div>
+    </footer>
+
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>

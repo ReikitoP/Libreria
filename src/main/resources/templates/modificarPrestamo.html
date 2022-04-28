@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="modificarLibro.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <title>Document</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-light navbar-dark bg-dark">
+
+
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Navbar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Menú Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/prestamos/lista}">Menú Prestamos</a>
+                </li>
+
+            </ul>
+
+        </nav>
+        <br><br>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fecha-Prestamo</th>
+                    <th scope="col">Fecha-Devolucion</th>
+                    <th scope="col">Libro</th>
+                    <th scope="col">Cliente</th>
+                </tr>
+            </thead>
+            <tbody th:each="prestamo : ${prestamos}">
+                <tr>
+                    <th scope="row" th:text="${prestamo.id}"></th>
+                    <td th:text="${prestamo.fechaPrestamo}"></td>
+                    <td th:text="${prestamo.fechaDevolucion}"></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <form th:action="@{/prestamos/modificar/__${prestamo.id}__}" method="POST">
+            <input hidden th:value= "${id}" name="id">
+            <div class="form-group">
+                <label>Fecha-Prestamo</label> <input type="number" class="form-control" name="Fecha de prestamo" placeholder="Fecha de prestamo">
+            </div>
+            <div class="form-group">
+                <label>Fecha-Devolucion</label> <input type="text" class="form-control" name="Fecha de devolucion" placeholder="Fecha de devolucion">
+            </div>
+            <button type="submit" class="btn btn-primary">Modificar</button>
+        </form>
+        <footer>
+            <div class="copyright" style="background-color: #0d47a1;">
+                <div class="container-fluid" style="background-color: #0d47a1; color: #bbdefb;">
+                    ©  Copyright: Todos los derechos y los izquierdos reservados.
+
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

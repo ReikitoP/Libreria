@@ -1,0 +1,18 @@
+body {
+    height: 400px;
+    background-image: url("OIP\ \(1\).jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    
+  }
+  footer {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+  }
+  label{
+      text-align: center;
+      color:white;
+  }
